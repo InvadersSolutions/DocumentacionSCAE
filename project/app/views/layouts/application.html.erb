@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project</title>
+        <%= csrf_meta_tags %>
+
+
+
+    </head>
+
+    <body>
+
+        <!-- header -->
+        <nav class="nav-extended deep-purple">
+            <div class="nav-wrapper">
+                <a src="" class="brand-logo">
+                    <%= image_tag "logo.png",size: "80x50", :alt => "", :title => ""%>
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <%if user_signed_in?%>
+                    <li>
+                        <%= current_user.type_user%>
+                        <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                    </li>
+                    <%else%>
+                    <li>
+                        <%= link_to "Registrarse", new_user_registration_path,class:"waves-effect waves-light btn" %>
+                    </li>
+                    <li>
+                        <%= link_to "Inicia Sesión", new_user_session_path,class:"waves-effect waves-light btn" %>
+                    </li>
+                    <%end%>
+
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab">
+                        <a href="#services">Sobre nosotros</a>
+                    </li>
+                    <li class="tab">
+                        <a class="active" href="#carreras">Carreras</a>
+                    </li>
+                    <!-- <li class="tab disabled"><a href="#test3">Disabled Tab</a></li> -->
+                    <li class="tab">
+                        <a class="page-scroll" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div> -->
+
+        <!-- main -->
+
+        <main>
+
+
+
+            <%= yield %>
+
+        </main>
+
+        <!-- footer -->
+        <footer class="page-footer deep-purple">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2014 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+</html>

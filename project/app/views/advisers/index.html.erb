@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Advisers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Materia</th>
+      <th>Tema</th>
+      <th>Horario</th>
+      <th>Aula</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @advisers.each do |adviser| %>
+      <tr>
+        <td><%= adviser.materia %></td>
+        <td><%= adviser.tema %></td>
+        <td><%= adviser.horario %></td>
+        <td><%= adviser.aula %></td>
+        <td><%= link_to 'Show', adviser %></td>
+        <td><%= link_to 'Edit', edit_adviser_path(adviser) %></td>
+        <td><%= link_to 'Destroy', adviser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adviser', new_adviser_path %>

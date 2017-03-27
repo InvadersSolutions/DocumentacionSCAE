@@ -1,0 +1,37 @@
+<%= form_for(adviser) do |f| %>
+  <% if adviser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adviser.errors.count, "error") %> prohibited this adviser from being saved:</h2>
+
+      <ul>
+      <% adviser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :materia %>
+    <%= f.text_field :materia %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tema %>
+    <%= f.text_field :tema %>
+  </div>
+
+  <div class="field">
+    <%= f.label :horario %>
+    <%= f.text_field :horario %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aula %>
+    <%= f.text_field :aula %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

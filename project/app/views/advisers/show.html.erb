@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Materia:</strong>
+  <%= @adviser.materia %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @adviser.tema %>
+</p>
+
+<p>
+  <strong>Horario:</strong>
+  <%= @adviser.horario %>
+</p>
+
+<p>
+  <strong>Aula:</strong>
+  <%= @adviser.aula %>
+</p>
+
+<%= link_to 'Edit', edit_adviser_path(@adviser) %> |
+<%= link_to 'Back', advisers_path %>
